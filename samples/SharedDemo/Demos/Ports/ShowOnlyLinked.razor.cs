@@ -47,10 +47,10 @@ namespace SharedDemo.Demos.Ports
             {
                 _allLocked = value;
                 foreach (var link in BlazorDiagram.Links)
-                    link.Locked = !_allLocked;
+                    link.Locked = _allLocked;
                 foreach (var node in BlazorDiagram.Nodes)
                 {
-                    node.Locked = !_allLocked;
+                    node.Locked = _allLocked;
                     node.RefreshAll();
                 }
             }
